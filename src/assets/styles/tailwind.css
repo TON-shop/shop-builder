@@ -29,7 +29,7 @@
 
 @layer base {
   html {
-    @apply bg-background text-front font- scroll-smooth;
+    @apply bg-background text-front font-default scroll-smooth;
   }
 
   body {

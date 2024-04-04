@@ -2,7 +2,7 @@ import { ComponentName, ComponentVariety } from "./components";
 
 export interface Element {
   name: ComponentName;
-  type: ComponentVariety<ComponentName>;
+  variety: ComponentVariety<ComponentName>;
   props: object;
 }
 

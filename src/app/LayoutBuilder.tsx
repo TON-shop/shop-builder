@@ -9,9 +9,12 @@ interface LayoutBuilderProps {
 export default function LayoutBuilder(props: LayoutBuilderProps) {
   return (
     <>
+      <p>adasdasd</p>
       {props.layout.map((el, key) =>
         React.createElement(
-          AllComponents[el.name][el.type as ComponentVariety<typeof el.name>],
+          AllComponents[el.name][
+            el.variety as ComponentVariety<typeof el.name>
+          ],
           { key, ...el.props }
         )
       )}
