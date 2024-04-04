@@ -25,7 +25,7 @@ export default function App() {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route element={<></>}>
+      <Route>
         <Route path="preview" element={<PreviewPage />} />
         <Route
           path="layout"
