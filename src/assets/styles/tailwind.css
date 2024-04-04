@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --page-padding: 8vw;
+    --radius: 0.5rem;
+    --font-default: "Geist Sans";
+  }
+
+  :root[data-theme="light"] {
+    --color-primary: 255 255 255;
+    --color-secondary: 255 255 255;
+    --color-foreground: 255 255 255;
+    --color-background: 255 255 255;
+    --color-front: 255 255 255;
+    --color-back: 255 255 255;
+  }
+  :root[data-theme="dark"] {
+    --color-primary: 255 255 255;
+    --color-secondary: 255 255 255;
+    --color-foreground: 255 255 255;
+    --color-background: 255 255 255;
+    --color-front: 255 255 255;
+    --color-back: 255 255 255;
+  }
+}
+
+@layer base {
+  html {
+    @apply bg-background text-front font- scroll-smooth;
+  }
+
+  body {
+    @apply m-0 p-0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    transition-duration: 300ms;
+  }
+}
