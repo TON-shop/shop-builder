@@ -1,12 +1,17 @@
+import { ComponentName, ComponentVariety } from "./components";
+
 export interface Element {
-  name: string;
-  type: string;
+  name: ComponentName;
+  type: ComponentVariety<ComponentName>;
+  props: object;
 }
+
+export type Layout = Array<Element>;
 
 export interface Route {
   title?: string;
   description?: string;
-  elements: Array<Element>;
+  layout: Layout;
 }
 
 export interface Shop {
