@@ -15,7 +15,7 @@ export default function App() {
         <title>{`Shop Title`}</title>
         <meta name="description" content={`Shop Description`} />
       </Helmet>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </>
   );
 }
@@ -23,7 +23,7 @@ export default function App() {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route element={<></>}>
+      <Route>
         <Route path="preview" element={<PreviewPage />} />
         <Route path="*" element={<></>} />
       </Route>
