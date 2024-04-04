@@ -3,7 +3,7 @@ import { ComponentName, ComponentVariety } from "./components";
 export interface Element {
   name: ComponentName;
   variety: ComponentVariety<ComponentName>;
-  props: object;
+  props: any;
 }
 
 export type Layout = Array<Element>;

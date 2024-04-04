@@ -1,6 +1,7 @@
 import Example from "./Example";
+import Navbar from "./Navbar";
 
-const AllComponents = { Example };
+const AllComponents = { Example, Navbar };
 
 export default AllComponents;
 
