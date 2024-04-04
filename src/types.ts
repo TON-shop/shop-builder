@@ -1,6 +1,12 @@
+export interface Element {
+  name: string;
+  type: string;
+}
+
 export interface Route {
   title?: string;
   description?: string;
+  elements: Array<Element>;
 }
 
 export interface Shop {
