@@ -5,6 +5,8 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import ErrorPage from "./ErrorPage";
+import PreviewPage from "./PreviewPage";
 
 export default function App() {
   return (
@@ -22,10 +24,11 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route element={<></>}>
-        <Route index element={<></>} />
+        <Route path="preview" element={<PreviewPage />} />
+        <Route path="*" element={<></>} />
       </Route>
 
-      <Route path="*" element={<Error />} />
+      <Route path="*" element={<ErrorPage />} />
     </>
   )
 );
