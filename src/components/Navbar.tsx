@@ -93,13 +93,28 @@ function D() {
         <div className="flex flex-col items-center justify-center gap-y-1 text-back relative py-1 min-w-[15%]">
           <div className={twMerge(i == 2 && "w-full h-full bg-primary/60 filter blur-[12px] absolute -z-1")}/>
             <Icon icon={item} key={i} className="text-[2rem]" />
-            <p className="text-[0.7rem]">{item}</p>
+            <p className="text-[0.7rem] capitalize">{item}</p>
         </div>
       ))}
     </nav>
   );
 }
 
-const Navbar = { A, B, C, D };
+function E() {
+  const [active, setActive] = useState(1)
+  return (
+    <nav className="text-back fixed bottom-0 left-0 flex justify-around w-full bg-foreground rounded-t-3xl py-2">
+      {navbarItems.map((item, i) => (
+        <div onClick={() => setActive(i)} className={twMerge(" duration-150 ease-linear flex items-center justify-center gap-x-1 text-back relative py-2 min-w-[15%]", i == active && "pl-2 pr-4 bg-primary rounded-2xl font-bold")}>
+          {/* <div className={twMerge(i == 2 && "w-full h-full bg-primary/60 filter blur-[12px] absolute -z-1")}/> */}
+            <Icon icon={item} key={i} className="text-[2rem]" />
+            <p className={twMerge("hidden capitalize duration-150 ease-linear", i == active && "block")}>{item}</p>
+        </div>
+      ))}
+    </nav>
+  );
+}
+
+const Navbar = { A, B, C, D, E };
 
 export default Navbar;
