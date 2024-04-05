@@ -1,18 +1,23 @@
+import { useState } from "react";
 import Icon from "../common/Icon";
+import { twMerge } from "tailwind-merge";
 
 const navbarItems = [
+  "person",
   "analytics",
   "paid",
-  "person",
   "description",
   "logout",
 ] as const;
 
 function A() {
   return (
-    <nav className="text-black fixed bottom-0 left-0 flex justify-around w-full py-4 bg-primary">
+    <nav className="text-back fixed bottom-0 left-0 flex justify-around w-full pt-4 pb-2 bg-primary rounded-t-3xl">
       {navbarItems.map((item, i) => (
-        <Icon icon={item} key={i} className="text-[2rem]" />
+        <div className="flex flex-col items-center gap-y-1">
+          <Icon icon={item} key={i} className="text-[2rem]" />
+          <p className="text-[0.7rem]">{item}</p>
+        </div>
       ))}
     </nav>
   );
@@ -22,6 +27,30 @@ function B(props: { name: string }) {
   return <>Hi {props.name}</>;
 }
 
-const Navbar = { A, B };
+function C() {
+  const [expanded, setExpanded] = useState(true)
+  return (
+    <nav className={twMerge("fixed top-0 left-0 bg-primary h-full px-4 py-4  border-2 duration-30000 ease-in", expanded ? "w-full" : "rounded-r-3xl")} onClick={() => (setExpanded(!expanded))}>
+      <div className="border-b-2 border-back/60 pb-4 flex gap-x-4 items-center">
+        <img src="https://randomuser.me/api/portraits/women/8.jpg" className="rounded-full w-[15vw] border-primary/50 border-2 p-1" />
+        <div className="flex flex-col text-back">
+          <p className="text-[0.8rem]">Good Day 👋</p>
+          <h1 className="text-xl">My name</h1>
+          <p></p>
+        </div>
+      </div>
+      <div className="flex flex-col gap-y-10 pt-4">
+      {navbarItems.map((item, i) => (
+        <div className="flex items-center gap-x-4 text-back">
+          <Icon icon={item} key={i} className="text-[1.8rem] " />
+          <p className="text-lg capitalize">{item}</p>
+        </div>
+      ))}
+      </div>
+    </nav>
+  )
+}
+
+const Navbar = { A, B, C };
 
 export default Navbar;
