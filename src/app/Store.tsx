@@ -1,24 +1,24 @@
 import React from "react";
-import { useParams, useLocation, Route } from "react-router-dom";
-import { exampleStore } from "../example";
+import { dummyStores, exampleStore } from "../example";
 import { getNestedItemByKeys, getTypedKeys } from "../utils";
 import LayoutBuilder from "./LayoutBuilder";
 import { RouteType } from "../types";
 import { Helmet } from "react-helmet";
+import ErrorPage from "./ErrorPage";
 
-export default function Store() {
-  const { id } = useParams();
+interface StoreProps {
+  id: string;
+  route: string[];
+}
 
-  const store = exampleStore; // use api call
-  const { pathname } = useLocation();
-  const path = pathname.split("/");
-  const loc = path.slice(3);
-
-  const route = getNestedItemByKeys<RouteType>(store.routes, loc);
+export default function Store(props: StoreProps) {
+  const store = dummyStores.find((s) => s.id == props.id); // make api call using <props.id>
+  const route =
+    store && getNestedItemByKeys<RouteType>(store.routes, props.route);
 
   return (
     <>
-      {route && (
+      {store && route && (
         <>
           <Helmet>
             <title>{route.title || store.name}</title>
@@ -33,6 +33,17 @@ export default function Store() {
           </main>
         </>
       )}
+
+      {!store && (
+        <>
+          <p className="w-full text-center bg-black text-orange-500 py-1">
+            Store not found
+          </p>
+          <ErrorPage />
+        </>
+      )}
+
+      {store && !route && <ErrorPage />}
     </>
   );
 }
