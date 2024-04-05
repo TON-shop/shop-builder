@@ -15,7 +15,7 @@ export interface RouteType {
 }
 
 export interface Store {
-  id: number;
+  id: string;
   name: string;
   icon: string;
   description: string;

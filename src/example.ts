@@ -12,7 +12,7 @@ export const exampleShopLayout: Layout = [
 ];
 
 export const exampleStore: Store = {
-  id: 1,
+  id: "example",
   name: "Example Store",
   description: "Example Store",
   icon: "https://cdn-icons-png.flaticon.com/512/4436/4436481.png",
@@ -21,3 +21,5 @@ export const exampleStore: Store = {
     shop: { title: "Example products", layout: exampleShopLayout },
   },
 };
+
+export const dummyStores: Array<Store> = [exampleStore];
