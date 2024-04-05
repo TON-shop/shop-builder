@@ -9,6 +9,24 @@ export const exampleHomeLayout: Layout = [
 
 export const exampleShopLayout: Layout = [
   { name: "Navbar", variety: "B", props: {} },
+  {
+    name: "CustomHtml",
+    variety: "A",
+    props: {
+      html: `
+    <div
+      style="
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1 style="color: brown">Okay this is testable</h1>
+      <img src="/favicon.ico" />
+    </div>`,
+    },
+  },
 ];
 
 export const exampleStore: Store = {

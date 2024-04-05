@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { dummyStores, exampleStore } from "../example";
 import { getNestedItemByKeys, getTypedKeys } from "../utils";
 import LayoutBuilder from "./LayoutBuilder";
 import { RouteType } from "../types";
-import { Helmet } from "react-helmet";
 import ErrorPage from "./ErrorPage";
+import useGlobalContext from "../contexts/GlobalContext";
+import {
+  defaultWebpageDescription,
+  defaultWebpageIcon,
+  defaultWebpageTitle,
+} from "../config";
 
 interface StoreProps {
   id: string;
@@ -16,22 +21,27 @@ export default function Store(props: StoreProps) {
   const route =
     store && getNestedItemByKeys<RouteType>(store.routes, props.route);
 
+  const { head } = useGlobalContext();
+
+  useEffect(() => {
+    head.set([
+      <title>{route?.title || store?.name || defaultWebpageTitle}</title>,
+      <meta
+        name="description"
+        content={
+          route?.description || store?.description || defaultWebpageDescription
+        }
+      />,
+      <link rel="icon" href={store?.icon || defaultWebpageIcon} />,
+    ]);
+  }, [store]);
+
   return (
     <>
       {store && route && (
-        <>
-          <Helmet>
-            <title>{route.title || store.name}</title>
-            <meta
-              name="description"
-              content={route.description || store.description}
-            />
-            <link rel="icon" href={store.icon || "/favicon.ico"} />
-          </Helmet>
-          <main>
-            <LayoutBuilder layout={route.layout} />
-          </main>
-        </>
+        <main>
+          <LayoutBuilder layout={route.layout} />
+        </main>
       )}
 
       {!store && (

@@ -1,6 +1,12 @@
 import { Helmet } from "react-helmet";
 import PreviewPage from "./PreviewPage";
 import Store from "./Store";
+import useGlobalContext from "../contexts/GlobalContext";
+import {
+  defaultWebpageDescription,
+  defaultWebpageIcon,
+  defaultWebpageTitle,
+} from "../config";
 
 export default function App() {
   const { pathname, hostname } = window.location;
@@ -22,11 +28,16 @@ export default function App() {
     }
   }
 
+  const { head } = useGlobalContext();
+
   return (
     <>
       <Helmet>
-        <title>{`Shop Title`}</title>
-        <meta name="description" content={`Shop Description`} />
+        {head.current || [
+          <title>{defaultWebpageTitle}</title>,
+          <meta name="description" content={defaultWebpageDescription} />,
+          <link rel="icon" href={defaultWebpageIcon} />,
+        ]}
       </Helmet>
 
       {outlet}
