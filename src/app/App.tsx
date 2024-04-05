@@ -7,8 +7,7 @@ import {
 import { Helmet } from "react-helmet";
 import ErrorPage from "./ErrorPage";
 import PreviewPage from "./PreviewPage";
-import LayoutBuilder from "./LayoutBuilder";
-import { exampleLayout } from "../example";
+import Store from "./Store";
 
 export default function App() {
   return (
@@ -27,11 +26,8 @@ const router = createBrowserRouter(
     <>
       <Route>
         <Route path="preview" element={<PreviewPage />} />
-        <Route
-          path="layout"
-          element={<LayoutBuilder layout={exampleLayout} />}
-        />
-        <Route path="*" element={<></>} />
+
+        <Route path="store/:id/*" element={<Store />} />
       </Route>
 
       <Route path="*" element={<ErrorPage />} />
