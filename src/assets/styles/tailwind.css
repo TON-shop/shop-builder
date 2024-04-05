@@ -10,10 +10,10 @@
   }
 
   :root[data-theme="light"] {
-    --color-primary: 037 099 235;
+    --color-primary: 238 108 077;
     --color-secondary: 000 000 000;
-    --color-foreground: 034 034 035;
-    --color-background: 255 255 255;
+    --color-foreground: 041 050 065;
+    --color-background: 223 239 245;
     --color-front: 028 028 028;
     --color-back: 255 255 255;
   }
