@@ -38,23 +38,23 @@ function C() {
   });
 
   return (
-    <div>
+    <div className="relative">
       <div
-        onClick={() => setExpanded(true)}
+        onClick={() => setExpanded(!expanded)}
         className={twMerge(
-          "z-10 hover:cursor-pointer",
-          expanded ? "hidden" : ""
+          "z-10 fixed top-3 right-6 hover:cursor-pointer border border-foreground p-1 rounded-full",
+          expanded ? "text-background/80 border-background/80 rounded-full" : "text-foreground"
         )}
       >
         <Icon
-          icon="menu"
-          className="fixed top-2 left-2 text-[2rem] text-foreground"
+          icon={expanded ? "close" : "menu" }
+          className={twMerge(expanded ? "text-[1.5rem]" : "text-[2rem]")}
         />
       </div>
       <nav
         className={twMerge(
-          "fixed top-0 left-0 bg-foreground/90 backdrop-blur-lg h-full px-4 py-4 border-2 duration-300 ease-in rounded-r-3xl",
-          expanded ? "" : "-translate-x-[100%]"
+          "fixed top-0 right-0 bg-foreground/90 backdrop-blur-lg h-full pr-8 pl-4 pb-4 pt-12 border-2 duration-300 ease-in rounded-l-3xl z-1",
+          expanded ? "" : "translate-x-[100%]"
         )}
       >
         <div className="border-b-2 border-back/60 pb-4 flex gap-x-4 items-center">
