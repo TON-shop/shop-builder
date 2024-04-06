@@ -1,4 +1,4 @@
-import { IconType } from "../../../../src/common/Icon";
+import { IconType } from "../../Icon/A/icons";
 
 export interface PropsType {
   heroItems: IconType[];
