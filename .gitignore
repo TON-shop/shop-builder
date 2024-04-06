@@ -1,4 +1,3 @@
-# Logs
 logs
 *.log
 npm-debug.log*
@@ -7,14 +6,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+package-lock.json
 node_modules
-dist
-dist-ssr
+
 *.local
 .env
 *.env
 
-# Editor directories and files
+.eslintcache
+.nyc_output
+coverage
+dist/*.map
+lib
+es
+
 .vscode/*
 !.vscode/extensions.json
 .idea
