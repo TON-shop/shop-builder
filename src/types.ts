@@ -1,26 +1,24 @@
-import { ComponentName, ComponentVariety } from "./components";
+// export interface Element {
+//   name: ComponentName;
+//   variety: string;
+//   props?: any;
+// }
 
-export interface Element {
-  name: ComponentName;
-  variety: string;
-  props?: any;
-}
+// export type Layout = Array<Element>;
 
-export type Layout = Array<Element>;
+// export interface RouteType {
+//   title?: string;
+//   description?: string;
+//   layout: Layout;
+// }
 
-export interface RouteType {
-  title?: string;
-  description?: string;
-  layout: Layout;
-}
-
-export interface Store {
-  id: string;
-  name: string;
-  icon: string;
-  description: string;
-  routes: Record<string, RouteType>;
-}
+// export interface Store {
+//   id: string;
+//   name: string;
+//   icon: string;
+//   description: string;
+//   routes: Record<string, RouteType>;
+// }
 
 export type UnionToArray<U> = U extends any ? U[] : never;
 

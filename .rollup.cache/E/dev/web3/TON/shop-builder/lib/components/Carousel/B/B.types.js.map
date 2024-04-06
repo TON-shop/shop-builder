@@ -1,0 +1,1 @@
+{"version":3,"file":"B.types.js","sourceRoot":"","sources":["B.types.ts"],"names":[],"mappings":"","sourcesContent":["export interface PropsType {}\r\n"]}

@@ -1,12 +1,14 @@
 {
-  "name": "client",
+  "name": "@tonshop/componentslib",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "rollup": "rollup -c --bundleConfigAsCjs",
+    "devserver": "vite"
   },
   "dependencies": {
     "@twa-dev/sdk": "^7.0.0",
@@ -17,17 +19,25 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "sanitize-html": "^2.13.0",
-    "tailwind-merge": "^2.1.0",
-    "typescript": "^5.4.3"
+    "tailwind-merge": "^2.1.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-helmet": "^6.1.11",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.38",
+    "rollup": "^4.14.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "tailwindcss": "^3.4.3",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.3",
     "vite": "^4.2.0"
   }
 }

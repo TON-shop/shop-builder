@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":"AAAA,OAAO,CAAC,MAAM,KAAK,CAAC;AACpB,OAAO,CAAC,MAAM,KAAK,CAAC;AAEpB,eAAe,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC","sourcesContent":["import A from \"./A\";\r\nimport B from \"./B\";\r\n\r\nexport default { A, B };\r\n"]}

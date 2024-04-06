@@ -1,0 +1,1 @@
+{"version":3,"file":"A.types.js","sourceRoot":"","sources":["A.types.ts"],"names":[],"mappings":"","sourcesContent":["import { IconType } from \"./icons\";\r\n\r\nexport interface propsType {\r\n  icon: IconType;\r\n  className?: string;\r\n  style?: React.CSSProperties;\r\n  stroke?: string;\r\n}\r\n"]}
