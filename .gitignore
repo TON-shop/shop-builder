@@ -31,3 +31,4 @@ es
 *.sw?
 
 *storybook.log
+.rollup.cache
