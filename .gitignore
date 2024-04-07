@@ -29,3 +29,5 @@ es
 *.njsproj
 *.sln
 *.sw?
+
+*storybook.log

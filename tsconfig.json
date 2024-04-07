@@ -17,5 +17,5 @@
     "jsx": "react-jsx"
     // "composite": true
   },
-  "include": ["src", "lib", "vite.config.ts"]
+  "include": ["src", "lib"]
 }

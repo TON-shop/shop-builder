@@ -1,1 +1,0 @@
-{"version":3,"file":"C.types.js","sourceRoot":"","sources":["C.types.ts"],"names":[],"mappings":"","sourcesContent":["export interface propsType {}\r\n"]}
