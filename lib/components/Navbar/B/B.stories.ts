@@ -7,5 +7,5 @@ export default {
 } as Meta<typeof B>;
 
 export const CarouselB: StoryObj<typeof B> = {
-  args: {},
+  args: { navbarItems: ["person", "logout", "menu", "description"] },
 };
